@@ -22,9 +22,9 @@ try {
 
   // orderパラメータの値によってSQL文を変更
   if($order === 'desc') {
-    $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY update_at DESC';
+    $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY updated_at DESC';
   } else {
-    $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY update_at ASC';
+    $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY updated_at ASC';
   }
   // SQL文を用意
   $stmt_select = $pdo->prepare($sql_select);

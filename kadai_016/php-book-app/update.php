@@ -18,7 +18,8 @@ if(isset($_POST['submit'])){
     genre_code = :genre_code
     WHERE id = :id
     ';
-    $stmt_update = $pdo->prepare($sql_update);
+    
+    $stmt_update->bindValue(':update_at', date('Y-m-d H:i:s'), PDO::PARAM_STR);
 
     // bindValueを使って実際の値をプレースホルダにバインド
     $stmt_update->bindValue(':book_code', $_POST['book_code'], PDO::PARAM_INT);
